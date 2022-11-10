@@ -8,6 +8,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { CustomerService } from './service/customer.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ListComponent } from './components/list/list.component';
 
 const materialModules =[
   MatFormFieldModule,
@@ -18,6 +19,7 @@ const materialModules =[
 @NgModule({
   declarations: [
     RegistrationComponent,
+    ListComponent,
   ],
   imports: [
     CommonModule,

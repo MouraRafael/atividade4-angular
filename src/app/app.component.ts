@@ -15,4 +15,7 @@ export class AppComponent {
   toRegistration(){
     this.router.navigate(["/clientes/cadastro"])
   }
+  toList(){
+    this.router.navigate(["/clientes/lista"])
+  }
 }
