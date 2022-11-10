@@ -25,7 +25,7 @@ export class RegistrationComponent implements OnInit {
         cep:['',[Validators.required]],
         logradouro:['',[Validators.required]],
         complemento:['',[Validators.required]],
-        bairro:[''],
+        bairro:['',[Validators.required]],
         localidade:['',[Validators.required]],
         uf:['',[Validators.required]]
       }),
