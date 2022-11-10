@@ -27,6 +27,10 @@ export class ListComponent implements OnInit {
     return this.clientes;
   }
 
+  edit(id:string):void{
+    this.router.navigate(["/clientes/edita",id])
+  }
+
   delete(id:string):void{
     this.service.delete(id)
   }

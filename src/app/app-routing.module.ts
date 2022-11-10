@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListComponent } from './customers/components/list/list.component';
 import { RegistrationComponent } from './customers/components/registration/registration.component';
+import { Router } from "@angular/router";
+import { EditComponent } from './customers/components/edit/edit.component';
 
 const routes: Routes = [
   {
@@ -16,6 +18,10 @@ const routes: Routes = [
   {
     path: 'clientes/lista',
     component: ListComponent
+  },
+  {
+    path:'clientes/edita/:id',
+    component: EditComponent
   },
 ];
 
