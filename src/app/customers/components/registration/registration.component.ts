@@ -39,4 +39,17 @@ export class RegistrationComponent implements OnInit {
     const cliente = this.formCadastroCliente.getRawValue() as ClienteModel;
     console.log(cliente)
   }
+
+
+
+  get nome(){  return this.formCadastroCliente.get("nome")!}
+  get cpf(){return this.formCadastroCliente.get("cpf")!}
+  get telefone(){return this.formCadastroCliente.get("telefone")!}
+
+  get cep(){return this.formCadastroCliente.get("endereco")?.get("cep")!}
+  get logradouro(){return this.formCadastroCliente.get("endereco")?.get("logradouro")!}
+  get complemento(){return this.formCadastroCliente.get("endereco")?.get("complemento")!}
+  get bairro(){return this.formCadastroCliente.get("endereco")?.get("bairro")!}
+  get localidade(){return this.formCadastroCliente.get("endereco")?.get("localidade")!}
+  get uf(){return this.formCadastroCliente.get("endereco")?.get("uf")!}
 }
