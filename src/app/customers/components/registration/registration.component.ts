@@ -22,11 +22,11 @@ export class RegistrationComponent implements OnInit {
     this.formCadastroCliente = this.formBuilder.group({
       nome:[''],
       cpf:['',[Validators.required,Validators.pattern(/^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/)]],
-      telefone:['',[Validators.required]],
+      telefone:['',[Validators.required,Validators.pattern(/(\(?\d{2}\)?\s)?(\d{4,5}\-?\d{4})$/)]],
       endereco:this.formBuilder.group({
-        cep:['',[Validators.required]],
+        cep:['',[Validators.required,Validators.pattern(/^\d{5}\-?\d{3}$/)]],
         logradouro:['',[Validators.required]],
-        complemento:['',[Validators.required]],
+        complemento:['',],
         bairro:['',[Validators.required]],
         localidade:['',[Validators.required]],
         uf:['',[Validators.required]]
