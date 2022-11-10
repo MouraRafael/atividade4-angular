@@ -1,1 +1,64 @@
-<p>registration works!</p>
+<section>
+  <h1>Cadastro de  Clientes</h1>
+  <form [formGroup]="formCadastroCliente">
+    <div class="formBox">
+      <mat-form-field>
+        <mat-label>Nome Completo</mat-label>
+        <input matInput formControlName="nome" placeholder="Digite o nome completo do cliente">
+      </mat-form-field>
+    </div>
+    <div class="formBox">
+      <mat-form-field>
+        <mat-label>CPF</mat-label>
+        <input matInput formControlName="cpf" placeholder="Digite o CPF do cliente">
+      </mat-form-field>
+    </div>
+
+    <div class="formBox">
+      <mat-form-field>
+        <mat-label>Telefone</mat-label>
+        <input matInput formControlName="telefone" placeholder="(xx) xxxx-xxxx">
+      </mat-form-field>
+    </div>
+
+    <div formGroupName="endereco">
+      <div class="formBox">
+        <mat-form-field>
+          <mat-label>CEP</mat-label>
+          <input matInput formControlName="cep" placeholder="Digite o CEP">
+        </mat-form-field>
+      </div>
+      <div class="formBox">
+        <mat-form-field>
+          <mat-label>Logradouro</mat-label>
+          <input matInput formControlName="logradouro">
+        </mat-form-field>
+      </div>
+      <div class="formBox">
+        <mat-form-field>
+          <mat-label>Complemento</mat-label>
+          <input matInput formControlName="complemento">
+        </mat-form-field>
+      </div>
+      <div class="formBox">
+        <mat-form-field>
+          <mat-label>Bairro</mat-label>
+          <input matInput formControlName="bairro">
+        </mat-form-field>
+      </div>
+      <div class="formBox">
+        <mat-form-field>
+          <mat-label>Cidade</mat-label>
+          <input matInput formControlName="localidade">
+        </mat-form-field>
+      </div>
+      <div class="formBox">
+        <mat-form-field>
+          <mat-label>Estado</mat-label>
+          <input matInput formControlName="uf">
+        </mat-form-field>
+      </div>
+    </div>
+    <button (click)="cadastrar()">Cadastro</button>
+  </form>
+</section>
