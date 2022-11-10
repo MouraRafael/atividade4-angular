@@ -11,9 +11,10 @@ export class CustomerService {
 
   constructor(private http:HttpClient) { }
 
-  cadastro(customer:ClienteModel){
-    localStorage.setItem('cliente',JSON.stringify(customer))
+  register(customer:ClienteModel){
+    localStorage.setItem('customers',JSON.stringify(customer))
   }
+
 
   pegaCEP(cepNumber:string):Observable<EnderecoModel>{
     const cep = this.http.get<EnderecoModel>(`http://viacep.com.br/ws/${cepNumber}/json/`);

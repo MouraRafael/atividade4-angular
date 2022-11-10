@@ -34,7 +34,7 @@
       <div class="formBox">
         <mat-form-field>
           <mat-label>CEP</mat-label>
-          <input matInput formControlName="cep" placeholder="Digite o CEP" required (keyup)="checaCEP()">
+          <input matInput formControlName="cep" placeholder="Digite o CEP" required (keyup)="verifyCEP()">
         </mat-form-field>
         <mat-error *ngIf="cep.errors?.['required']">
           <span style="color: red">Campo Obrigatório</span>

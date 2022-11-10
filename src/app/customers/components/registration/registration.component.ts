@@ -39,10 +39,10 @@ export class RegistrationComponent implements OnInit {
   cadastrar():void{
 
     const cliente = this.formCadastroCliente.getRawValue() as ClienteModel;
-    this.service.cadastro(cliente);
+    this.service.register(cliente);
   }
 
-  checaCEP(){
+  verifyCEP(){
     const cep = this.formCadastroCliente.get('endereco')?.getRawValue() as EnderecoModel;
     console.log(cep)
     const receivedCEP = this.service.pegaCEP(cep.cep);
