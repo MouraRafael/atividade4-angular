@@ -19,15 +19,15 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
     this.formCadastroCliente = this.formBuilder.group({
       nome:[''],
-      cpf:[''],
-      telefone:[''],
+      cpf:['',[Validators.required,Validators.pattern(/^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/)]],
+      telefone:['',[Validators.required]],
       endereco:this.formBuilder.group({
-        cep:[''],
-        logradouro:[''],
-        complemento:[''],
+        cep:['',[Validators.required]],
+        logradouro:['',[Validators.required]],
+        complemento:['',[Validators.required]],
         bairro:[''],
-        localidade:[''],
-        uf:['']
+        localidade:['',[Validators.required]],
+        uf:['',[Validators.required]]
       }),
     })
   }
