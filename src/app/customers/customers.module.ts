@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
+import { CustomerService } from './service/customer.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const materialModules =[
   MatFormFieldModule,
@@ -22,7 +24,9 @@ const materialModules =[
     FormsModule,
     ReactiveFormsModule,
     ...materialModules,
+    HttpClientModule
   ],
-  exports:[RegistrationComponent]
+  exports:[RegistrationComponent],
+  providers:[CustomerService]
 })
 export class CustomersModule { }

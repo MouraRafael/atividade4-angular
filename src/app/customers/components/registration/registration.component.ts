@@ -3,6 +3,7 @@ import { FormBuilder,FormGroup, Validators } from "@angular/forms";
 
 import { ClienteModel } from '../../model/ClienteModel';
 import { EnderecoModel } from "../../model/EnderecoModel";
+import { CustomerService } from '../../service/customer.service';
 
 @Component({
   selector: 'app-registration',
@@ -13,7 +14,8 @@ export class RegistrationComponent implements OnInit {
   formCadastroCliente!:FormGroup;
 
   constructor(
-    private formBuilder:FormBuilder
+    private formBuilder:FormBuilder,
+    private service:CustomerService
   ) { }
 
   ngOnInit(): void {
@@ -37,12 +39,38 @@ export class RegistrationComponent implements OnInit {
   cadastrar():void{
 
     const cliente = this.formCadastroCliente.getRawValue() as ClienteModel;
-    console.log(cliente)
+    this.service.cadastro(cliente);
   }
 
   checaCEP(){
-    console.log('abc')
+    const cep = this.formCadastroCliente.get('endereco')?.getRawValue() as EnderecoModel;
+    console.log(cep)
+    const receivedCEP = this.service.pegaCEP(cep.cep);
+    receivedCEP.subscribe({
+      next:(cep)=>{
+        this.refresForm(cep)
+      },
+      error: (err)=>{
+        console.log(err)
+      }
+    })
+    console.log(receivedCEP)
   }
+
+  refresForm(endereco:EnderecoModel){
+    this.formCadastroCliente.get("endereco")?.patchValue({
+      logradouro: endereco.logradouro,
+      bairro: endereco.bairro,
+      localidade:endereco.localidade,
+      uf: endereco.uf
+    })
+  }
+
+
+
+
+
+
 
 
 
