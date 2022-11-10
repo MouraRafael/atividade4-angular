@@ -14,7 +14,17 @@ export class CustomerService {
   register(customer:ClienteModel){
     customer.id = uuid.v4()
 
-    localStorage.setItem('customers',JSON.stringify(customer))
+    let customers:ClienteModel[] = this.list();
+    customers.push(customer);
+
+
+    //memo: remember to try to validate the CPF later when there's more time
+    localStorage.setItem('customers',JSON.stringify(customers))
+  }
+
+  list():ClienteModel[]{
+    let customerList = JSON.parse(localStorage.getItem('customers')!) as ClienteModel[] ?? [];
+    return customerList;
   }
 
 
