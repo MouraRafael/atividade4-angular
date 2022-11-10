@@ -3,7 +3,7 @@ import { ClienteModel } from '../model/ClienteModel';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { EnderecoModel } from '../model/EnderecoModel';
-
+import * as uuid from 'uuid';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +12,8 @@ export class CustomerService {
   constructor(private http:HttpClient) { }
 
   register(customer:ClienteModel){
+    customer.id = uuid.v4()
+
     localStorage.setItem('customers',JSON.stringify(customer))
   }
 
