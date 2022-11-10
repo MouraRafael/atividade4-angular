@@ -37,15 +37,12 @@ export class CustomerService {
 
   getCustomerById(id:string){
     const customers: ClienteModel[] = this.list();
-
     let customer = customers.filter(customer => customer.id === id)
-
     return customer;
-
   }
 
 
-  pegaCEP(cepNumber:string):Observable<EnderecoModel>{
+  getCEP(cepNumber:string):Observable<EnderecoModel>{
     const cep = this.http.get<EnderecoModel>(`http://viacep.com.br/ws/${cepNumber}/json/`);
     return cep;
   }
