@@ -45,7 +45,7 @@ export class RegistrationComponent implements OnInit {
   verifyCEP(){
     const cep = this.formCadastroCliente.get('endereco')?.getRawValue() as EnderecoModel;
     console.log(cep)
-    const receivedCEP = this.service.pegaCEP(cep.cep);
+    const receivedCEP = this.service.getCEP(cep.cep);
     receivedCEP.subscribe({
       next:(cep)=>{
         this.refresForm(cep)
