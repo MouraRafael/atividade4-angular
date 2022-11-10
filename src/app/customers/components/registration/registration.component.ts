@@ -80,7 +80,7 @@ export class RegistrationComponent implements OnInit {
 
   get cep(){return this.formCadastroCliente.get("endereco")?.get("cep")!}
   get logradouro(){return this.formCadastroCliente.get("endereco")?.get("logradouro")!}
-  get complemento(){return this.formCadastroCliente.get("endereco")?.get("complemento")!}
+
   get bairro(){return this.formCadastroCliente.get("endereco")?.get("bairro")!}
   get localidade(){return this.formCadastroCliente.get("endereco")?.get("localidade")!}
   get uf(){return this.formCadastroCliente.get("endereco")?.get("uf")!}
