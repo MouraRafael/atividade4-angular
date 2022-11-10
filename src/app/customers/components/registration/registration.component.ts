@@ -40,6 +40,10 @@ export class RegistrationComponent implements OnInit {
     console.log(cliente)
   }
 
+  checaCEP(){
+    console.log('abc')
+  }
+
 
 
   get nome(){  return this.formCadastroCliente.get("nome")!}
