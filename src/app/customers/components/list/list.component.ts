@@ -27,4 +27,8 @@ export class ListComponent implements OnInit {
     return this.clientes;
   }
 
+  delete(id:string):void{
+    this.service.delete(id)
+  }
+
 }

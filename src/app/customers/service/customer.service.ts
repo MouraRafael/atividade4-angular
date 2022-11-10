@@ -27,6 +27,14 @@ export class CustomerService {
     return customerList;
   }
 
+  delete(id:string){
+    let customers:ClienteModel[] = this.list();
+
+    customers = customers.filter(customer => customer.id !== id)
+
+    localStorage.setItem('customers',JSON.stringify(customers))
+  }
+
 
   pegaCEP(cepNumber:string):Observable<EnderecoModel>{
     const cep = this.http.get<EnderecoModel>(`http://viacep.com.br/ws/${cepNumber}/json/`);
