@@ -41,6 +41,17 @@ export class CustomerService {
     return customer;
   }
 
+  edit(customer:ClienteModel){
+    let customers:ClienteModel[] = this.list();
+
+    customers.forEach((c,i,customers)=>{
+      if(customer.id === c.id){
+        customers[i] = customer;
+      }
+    })
+    localStorage.setItem('customers', JSON.stringify(customers))
+  }
+
 
   getCEP(cepNumber:string):Observable<EnderecoModel>{
     const cep = this.http.get<EnderecoModel>(`http://viacep.com.br/ws/${cepNumber}/json/`);
