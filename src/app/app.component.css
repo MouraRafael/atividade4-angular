@@ -1,0 +1,22 @@
+.container{
+
+  max-width: 80%;
+  margin: auto;
+
+}
+
+.header{
+  background-color: white;
+  padding: 1rem;
+  width: 100vw;
+}
+
+.menu{
+  max-width: 80%;
+  padding: 1rem;
+  margin: auto;
+  display: flex;
+  gap: .5rem;
+}
+
+

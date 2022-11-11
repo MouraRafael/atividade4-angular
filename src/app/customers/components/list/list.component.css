@@ -1,0 +1,33 @@
+.customer-list{
+  background-color: rgba(255, 255, 255, .8);
+  margin-top: 2rem;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.customer-list h1{
+  color: black;
+  text-decoration: underline;
+  background-color: white;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+  border: 1px solid rgba(0, 0, 0, .2)
+
+}
+
+.table-list{
+  width: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.btn:hover{
+  cursor: pointer;
+  color: green;
+}
+
+.btn-edit{
+  color:cornflowerblue
+}
+.btn-delete{
+  color:red
+}

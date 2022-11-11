@@ -1,4 +1,4 @@
-<section>
+<section class="form-register">
   <h1>Cadastro de  Clientes</h1>
   <form [formGroup]="formCadastroCliente">
     <div class="formBox">
@@ -83,6 +83,6 @@
         </mat-error>
       </div>
     </div>
-    <button (click)="cadastrar()">Cadastro</button>
+    <button mat-raised-button color="primary" (click)="cadastrar()">Cadastro</button>
   </form>
 </section>

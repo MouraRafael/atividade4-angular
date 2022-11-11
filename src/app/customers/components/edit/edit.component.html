@@ -1,4 +1,4 @@
-<section>
+<section class="form-edit">
   <h1>Cadastro de  Clientes</h1>
   <form [formGroup]="formEditaCliente">
     <div class="formBox">
@@ -83,6 +83,6 @@
         </mat-error>
       </div>
     </div>
-    <button (click)="edit()">Editar</button>
+    <button mat-raised-button color="primary" (click)="edit()">Editar</button>
   </form>
 </section>

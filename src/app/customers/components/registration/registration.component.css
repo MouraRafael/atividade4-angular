@@ -1,0 +1,30 @@
+.form-register{
+  border-radius: 20px;
+  padding: 2rem;
+  background-color: white;
+  width: 50vw;
+  margin: auto;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+
+}
+
+.formBox{
+  width: 50vw;
+  margin: auto;
+
+
+
+}
+.mat-form-field{
+  width: 100%;
+  max-width: 500px;
+  min-width: 50%;
+  margin: auto;
+
+}
+
+button{
+  margin-top: 2rem;
+  width: 100%;
+}
