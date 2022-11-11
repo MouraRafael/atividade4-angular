@@ -7,13 +7,13 @@
 
 .header{
   background-color: white;
-  padding: 1rem;
+  padding: 1rem 0;
   width: 100vw;
 }
 
 .menu{
   max-width: 80%;
-  padding: 1rem;
+  padding: 1rem 0;
   margin: auto;
   display: flex;
   gap: .5rem;
