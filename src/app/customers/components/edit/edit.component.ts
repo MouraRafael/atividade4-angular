@@ -68,7 +68,7 @@ export class EditComponent implements OnInit {
   verifyCEP(){
     const endereco = this.formEditaCliente.get("endereco")?.getRawValue() as EnderecoModel;
 
-    const receivedCEP = this.service.getCEP(endereco.cep).subscribe({
+    this.service.getCEP(endereco.cep).subscribe({
       next: (end)=>{
         this.formEditaCliente.get("endereco")?.patchValue({
           logradouro: end.logradouro,
