@@ -13,6 +13,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatTableModule } from "@angular/material/table";
 import { EditComponent } from './components/edit/edit.component';
+import { RouterLink } from '@angular/router';
 
 
 const materialModules =[
@@ -34,7 +35,8 @@ const materialModules =[
     FormsModule,
     ReactiveFormsModule,
     ...materialModules,
-    HttpClientModule
+    HttpClientModule,
+    RouterLink
   ],
   exports:[RegistrationComponent],
   providers:[CustomerService]

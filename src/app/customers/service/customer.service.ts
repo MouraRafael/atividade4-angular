@@ -37,7 +37,11 @@ export class CustomerService {
 
   getCustomerById(id:string){
     const customers: ClienteModel[] = this.list();
-    let customer = customers.filter(customer => customer.id === id)
+    let customer!:ClienteModel;
+      for(let i = 0 ; i<customers.length; i++){
+        if(customers[i].id === id) customer = customers[i];
+      }
+
     return customer;
   }
 
