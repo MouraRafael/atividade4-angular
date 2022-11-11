@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ClienteModel } from '../../model/ClienteModel';
+import { EnderecoModel } from '../../model/EnderecoModel';
 import { CustomerService } from '../../service/customer.service';
 
 @Component({
@@ -62,6 +63,22 @@ export class EditComponent implements OnInit {
     this.customerEntity.endereco.uf = this.uf.value;
 
     this.service.edit(this.customerEntity)
+  }
+
+  verifyCEP(){
+    const endereco = this.formEditaCliente.get("endereco")?.getRawValue() as EnderecoModel;
+    console.log(endereco)
+    const receivedCEP = this.service.getCEP(endereco.cep).subscribe({
+      next: (end)=>{
+        this.formEditaCliente.get("endereco")?.patchValue({
+          logradouro: end.logradouro,
+          bairro: end.bairro,
+          localidade: end.localidade,
+          uf: end.uf,
+        })
+      },
+      error:(err)=>{console.log(err)}
+    })
   }
 
 
